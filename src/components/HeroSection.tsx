@@ -6,16 +6,13 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)`,
-        }} />
+      <div className="absolute inset-0 opacity-5">        <div className="absolute inset-0 diagonal-pattern" />
       </div>
 
       <div className="relative z-10 text-center px-6 animate-fadeInUp">
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter mb-6">
           TELLING<br />
-          CULTURAL<br />
+          <span className="text-stroke">CULTURAL</span><br />
           STORIES
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl font-light text-gray-400 tracking-widest mb-10">
@@ -23,10 +20,9 @@ export default function HeroSection() {
         </p>
         <Link
           href="#shows"
-          className="inline-block px-10 py-4 border-2 border-white text-white font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-1"
+          className="inline-block bg-white text-black px-8 py-4 font-semibold hover:bg-gray-200 transition-colors"
         >
-          EXPLORE OUR WORK
-        </Link>
+          VIEW OUR WORK        </Link>
       </div>
 
       {/* Scroll Indicator */}

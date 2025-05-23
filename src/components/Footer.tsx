@@ -7,7 +7,7 @@ export default function Footer() {
             &copy; 2024 ANY PRODUCTION LTD. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6">
-            
+            <a
               href="https://www.instagram.com/anytelevision/"
               target="_blank"
               rel="noopener noreferrer"
@@ -15,7 +15,7 @@ export default function Footer() {
             >
               INSTAGRAM
             </a>
-            
+            <a
               href="https://www.youtube.com/@kortyeo"
               target="_blank"
               rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function Footer() {
             >
               YOUTUBE
             </a>
-            
+            <a
               href="https://twitter.com/korty_eo"
               target="_blank"
               rel="noopener noreferrer"

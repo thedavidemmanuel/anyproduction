@@ -11,6 +11,7 @@ export default function ContactSection() {
           Ready to tell your story? We&apos;re here to bring your vision to life.
         </p>
         
+        <a
           href="mailto:hello@anyproduction.tv"
           className="inline-block px-12 py-5 bg-white text-black text-lg font-bold tracking-wider hover:transform hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
         >

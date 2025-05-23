@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function AboutSection() {
   const contentStyles = [
     "SHORT FILM",
@@ -50,7 +52,7 @@ export default function AboutSection() {
             {/* You can replace this with an actual image */}
             <div className="absolute inset-0 opacity-20">
               <Image
-                src="https://images.unsplash.com/photo-1579390114265-0b7ebc34dc84?w=800&h=600&fit=crop"
+                src="/placeholder-image-about.jpg"
                 alt="Behind the scenes"
                 fill
                 className="object-cover"
