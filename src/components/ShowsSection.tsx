@@ -53,9 +53,10 @@ export default function ShowsSection() {
   const [hoveredShow, setHoveredShow] = useState<number | null>(null);
   
   return (
-    <section id="shows" className="py-20 md:py-32 bg-black">
-      <div className="px-6 lg:px-16">
-        <div className="max-w-7xl mx-auto">
+    <section id="shows" className="py-32 md:py-40 lg:py-48 bg-black">
+      <div className="w-full px-6 lg:px-16">
+        <div className="w-full max-w-7xl mx-auto">
+          {/* Header */}
           <div className="mb-16 animate-fadeInUp text-center">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4">
               OUR SHOWS & FILMS
@@ -65,36 +66,38 @@ export default function ShowsSection() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 place-items-center">
-            {shows.map((show, index) => (
-              <div
+          {/* Grid Container */}
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {shows.map((show, index) => (              <div
                 key={show.id}
-                className={`relative group cursor-pointer overflow-hidden bg-gray-900 animate-fadeInUp w-full max-w-[350px] animate-delay-${index * 100}`}
+                className={`relative group cursor-pointer overflow-hidden bg-gray-900 w-full aspect-[4/5] animate-fadeInUp animate-delay-${index * 100}`}
                 onMouseEnter={() => setHoveredShow(show.id)}
                 onMouseLeave={() => setHoveredShow(null)}
               >
-                <div className="relative h-[280px] md:h-[320px] lg:h-[360px] overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-full">
                   <Image
                     src={show.image}
                     alt={show.title}
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 </div>
                 
-                <div
-                  className={`absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500 ${
-                    hoveredShow === show.id ? "translate-y-0" : "translate-y-20"
-                  }`}
-                >
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <h3 className="text-2xl lg:text-3xl font-black tracking-tight mb-2">
                     {show.title}
                   </h3>
                   <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
                     {show.type}
                   </p>
-                  <p className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p 
+                    className={`text-gray-300 transition-all duration-500 ${
+                      hoveredShow === show.id 
+                        ? "opacity-100 transform translate-y-0" 
+                        : "opacity-0 transform translate-y-4"
+                    }`}
+                  >
                     {show.description}
                   </p>
                 </div>
